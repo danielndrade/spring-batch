@@ -1,0 +1,33 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.10.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'br.com.danielndrade.git.examples'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile 'org.postgresql:postgresql:42.2.1'
+	compile('org.springframework.boot:spring-boot-starter-batch')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile 'org.springframework.boot:spring-boot-starter-web:1.5.10.RELEASE'
+	compile 'org.springframework.boot:spring-boot-starter-tomcat:1.5.10.RELEASE'
+	testCompile('org.springframework.batch:spring-batch-test')
+}
